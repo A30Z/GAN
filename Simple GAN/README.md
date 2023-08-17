@@ -1,4 +1,4 @@
-#Simple GAN:
+# Simple GAN:
 
 using normal distribution for real data and using uniform distribution for generator input
 
