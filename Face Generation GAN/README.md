@@ -1,4 +1,4 @@
-Face Generation GAN:
+# Face Generation GAN:
 
 using DCGAN tutorial of pytorch.org
 
