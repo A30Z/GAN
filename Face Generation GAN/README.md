@@ -1,13 +1,28 @@
 # Face Generation GAN:
 
-using DCGAN tutorial of pytorch.org
+for this example we using DCGAN tutorial of pytorch.org
 
-generator:
+we will use the Celeb-A Faces dataset which can be downloaded at the linked site,
+[Celeb-A](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+or in Google Drive.
+[google-drive](https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg)
+The dataset will download as a file named img_align_celeba.zip. Once downloaded, create a directory named celeba and extract the zip file into that directory. Then, set the dataroot input for this notebook to the celeba directory you just created. The resulting directory structure should be:
+  /path/to/celeba
+    -> img_align_celeba
+        -> 188242.jpg
+        -> 173822.jpg
+        -> 284702.jpg
+        -> 537394.jpg
+           ...
+
+so in this example real data is pictures of celebrity faces and generator learning to generate pictures similar to real faces from noise
+
+this is **generator** architectur:
 
 ![generator](https://github.com/A30Z/GAN/assets/121484376/6fc02246-8a23-44b6-a68a-d55a8bd89c1d)
 
 
-discriminator:
+this is **discriminator** architecture:
 
 ![discriminator](https://github.com/A30Z/GAN/assets/121484376/997f91a6-1c0b-4d99-9742-7b4c83a8fcc8)
 
@@ -30,3 +45,5 @@ last generator output:
 real data vs generator output:
 
 ![output3](https://github.com/A30Z/GAN/assets/121484376/687716df-3247-4528-861e-39135191fe71)
+
+you can see details in notebook
