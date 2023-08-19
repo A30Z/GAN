@@ -55,6 +55,9 @@ you can find code and model and details in this link:
 # text to image GAN
 the goal is to generate an image that corresponds to a given textual description. This involves converting the text input into a meaningful representation, such as a feature vector, and then using this representation to generate an image that matches the description.
 
+the diffrent part of this type of GAN is converting text to semantic features to pass to generators.
+everything else is really similar to other kind of GANs
+
 ![architecture](https://github.com/A30Z/GAN/assets/121484376/b94a1385-620a-4f68-8270-1e7b93ec7a70)
 
 **generator** and **discriminator** architecture:
