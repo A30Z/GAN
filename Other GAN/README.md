@@ -15,7 +15,7 @@ Each generator has a corresponding discriminator model (Discriminator-A and Disc
   Domain-B -> Discriminator-B -> [Real/Fake]
   Domain-A -> Generator-B -> Discriminator-B -> [Real/Fake]
 
-in this kind of GAN we have 3 **losses for generator**:
+in this kind of GAN we have 3 **losses**:
 1)**Adversarial Loss**: We apply Adversarial Loss to both the Generators, where the Generator tries to generate the images of it's domain, while its corresponding discriminator distinguishes between the translated samples and real samples. Generator aims to minimize this loss against its corresponding Discriminator that tries to maximize it.
 
 2)**Cycle Consistency Loss**: It captures the intuition that if we translate the image from one domain to the other and back again we should arrive at where we started. Hence, it calculates the L1 loss between the original image and the final generated image, which should look same as original image. It is calculated in two directions:
@@ -46,7 +46,7 @@ this is **resault**:
 
 ![resault](https://github.com/A30Z/GAN/assets/121484376/1a892de6-46a5-4a94-afa7-40d550c63b9c)
 
-you can find code and model and details in this link:
+you can find details and code and model in this link:
 
 [pytorch_implementation](https://www.kaggle.com/code/balraj98/cyclegan-translating-horses-zebras-pytorch)
 
@@ -64,12 +64,54 @@ everything else is really similar to other kind of GANs
 
 ![architrcture](https://github.com/A30Z/GAN/assets/121484376/6f86266f-c7bd-4bc7-a6f4-4a8fea21bfe0)
 
-this is resault:
+this is **resault**:
 
 ![output](https://github.com/A30Z/GAN/assets/121484376/b7f04a8d-39c2-4b9e-a9a3-7055fa1c9007)
 
-you can find code and model in this link:
+you can find details and code and model in this link:
 
 [pytorch implementation](https://www.kaggle.com/code/avikbanik/text-to-image-xlnet-pytorch)
 
+# Super-resolution GAN(SRGAN)
+Super-resolution GAN applies a deep network in combination with an adversary network to produce higher resolution images. As shown above, SRGAN is more appealing to a human with more details compared with the similar design without GAN (SRResNet). During the training, A high-resolution image (HR) is downsampled to a low-resolution image (LR). A GAN generator upsamples LR images to super-resolution images (SR). We use a discriminator to distinguish the HR images and backpropagate the GAN loss to train the discriminator and the generator.
 
+this is **architecture of SRGAN**:
+
+![SRGAN](https://github.com/A30Z/GAN/assets/121484376/b22c2008-0676-4c7b-8775-184cce7c3493)
+
+this is **generator architecture**:
+
+![srgen](https://github.com/A30Z/GAN/assets/121484376/5f7e70b2-6dc8-4156-a9d7-3fc865740384)
+
+this is **discriminator architecture**:
+
+![srdis](https://github.com/A30Z/GAN/assets/121484376/e0786f40-53f1-41b0-8623-a43f4841d36c)
+
+in this kind of GAN we have 2 **losses**:
+
+1)**Content Loss**: We use two types of content loss in the paper : pixelwise MSE loss for the SRResnet architecture, which is most common MSE loss for image Super Resolution. However MSE loss does not able to deal with high frequency content in the image that resulted in producing overly smooth images. Therefore the authors of the paper decided to  use loss of different VGG layers. This VGG loss is based on the ReLU activation layers of the pre-trained 19 layer VGG network. This loss is defined as follows:
+**simple content loss**:
+
+![l1](https://github.com/A30Z/GAN/assets/121484376/e9886b64-9ed3-4477-ba0f-c9fa5b127e15)
+
+**VGG contents loss**:
+
+![l2](https://github.com/A30Z/GAN/assets/121484376/c5845b26-072c-4261-8684-193cafb5971a)
+
+2)**Adversarial Loss**: The Adversarial loss is the loss function that forces the generator to image more similar to high resolution image by using a discriminator that is trained to differentiate between high resolution and super resolution images.
+
+![l3](https://github.com/A30Z/GAN/assets/121484376/beb8086d-0552-4514-b8fb-3f593f3ed161)
+
+**total loss**:
+
+![l4](https://github.com/A30Z/GAN/assets/121484376/d3e603ba-9d30-46a2-9bec-b6c7b1f941a2)
+
+
+
+this is a **resault**:
+
+![example](https://github.com/A30Z/GAN/assets/121484376/2e163892-d3bc-4eaa-a7ec-1d2712a12f1a)
+
+you can find details and code and model:
+
+[pytorch implementation](https://www.kaggle.com/code/balraj98/single-image-super-resolution-gan-srgan-pytorch)
