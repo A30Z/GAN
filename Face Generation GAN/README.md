@@ -2,10 +2,10 @@
 
 for this example we using DCGAN tutorial of pytorch.org
 
-we will use the Celeb-A Faces dataset which can be downloaded at the linked site,
-[Celeb-A](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
-or in Google Drive.
-[google-drive](https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg)
+we will use the Celeb-A Faces dataset which can be downloaded at the 
+[linked site](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html),
+or in 
+[Google Drive](https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg).
 The dataset will download as a file named img_align_celeba.zip. Once downloaded, create a directory named celeba and extract the zip file into that directory. Then, set the dataroot input for this notebook to the celeba directory you just created. The resulting directory structure should be:
   /path/to/celeba
     -> img_align_celeba
