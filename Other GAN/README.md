@@ -112,6 +112,6 @@ this is a **resault**:
 
 ![example](https://github.com/A30Z/GAN/assets/121484376/2e163892-d3bc-4eaa-a7ec-1d2712a12f1a)
 
-you can find details and code and model:
+you can find details and code and model in this link:
 
 [pytorch implementation](https://www.kaggle.com/code/balraj98/single-image-super-resolution-gan-srgan-pytorch)
