@@ -48,3 +48,4 @@ the generative model captures the distribution of data and is trained in such a 
 
 you can see diffrent kind of GAN in each folder
 
+### References
